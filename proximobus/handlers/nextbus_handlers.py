@@ -66,8 +66,8 @@ def handle_route_vehicles(agency_id, route_id):
 
 def handle_agency_vehicles(agency_id):
     nb_vehicles = nextbus.get_all_vehicle_locations(agency_id)
+    nb_vehicles = filter(lambda v : v.direction_tag is not None, nb_vehicles)
     vehicles = map(lambda nb_v : model.Vehicle.from_nextbus(nb_v), nb_vehicles)
-	vehicles = filter(lambda v : v.route_tag is not None, vehicles)
     return model.List(ObjectField(model.Vehicle))(vehicles)
 
 def handle_single_vehicle(agency_id, vehicle_id):

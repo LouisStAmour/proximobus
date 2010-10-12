@@ -99,7 +99,7 @@ def add_kml_elem(obj, etree):
 
 
 def format_kml(obj):
-    etree = ElementTree.ElementTree(ElementTree.fromstring("<kml><Document /><NetworkLink><name>TTC Proximobus</name><Url><href>http://ttc-proximobus.appspot.com/agencies/ttc/vehicles.kml</href><refreshMode>onInterval</refreshMode><refreshInverval>10</refreshInverval></Url></NetworkLink></kml>"))
+    etree = ElementTree.ElementTree(ElementTree.fromstring("<kml><Document /></kml>"))
     add_kml_elem(obj, etree)
     output = StringIO.StringIO()
     etree.write(output)
