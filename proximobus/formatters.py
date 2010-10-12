@@ -73,7 +73,7 @@ def add_kml_elem(obj, etree):
             add_kml_elem(item, etree)
         return
     elif isinstance(obj, model.Vehicle):
-        name = "%s (%s)" % (obj.route_id, obj.id)
+        name = "%s (%s)" % (obj.run_id, obj.id)
         latitude = obj.latitude
         longitude = obj.longitude
     elif isinstance(obj, model.Stop):
